@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | Care24</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="register">
+  <main class="auth-shell">
+    <section class="auth-card wide">
+      <h1>Create Account</h1>
+      <p class="muted">Register as a family member or caregiver.</p>
+      <form id="registerForm" class="form-grid two-col">
+        <label>Full Name
+          <input type="text" id="rname" placeholder="Enter full name" required>
+        </label>
+        <label>Email
+          <input type="email" id="remail" placeholder="Enter email" required>
+        </label>
+        <label>Password
+          <input type="password" id="rpassword" placeholder="Create password" required>
+        </label>
+        <label>Role
+          <select id="role" required>
+            <option value="user">Family / User</option>
+            <option value="caregiver">Caregiver</option>
+          </select>
+        </label>
+        <label class="caregiver-field">Qualification
+          <input type="text" id="qualification" placeholder="Nurse, Physiotherapist, etc.">
+        </label>
+        <label class="caregiver-field">Service Area
+          <input type="text" id="serviceArea" placeholder="City / Region">
+        </label>
+        <label class="caregiver-field">Availability
+          <select id="availability">
+            <option>Full-time</option>
+            <option>Part-time</option>
+            <option>Night Shift</option>
+            <option>Weekends</option>
+          </select>
+        </label>
+        <div></div>
+        <button type="submit" class="btn btn-primary">Register</button>
+      </form>
+      <p class="muted">Already registered? <a href="login.html">Login</a></p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/login", "destination": "/login.html" },
+    { "source": "/forgot-password", "destination": "/forgot-password.html" },
+    { "source": "/register", "destination": "/register.html" },
+    { "source": "/dashboard", "destination": "/dashboard.html" },
+    { "source": "/caregiver", "destination": "/caregiver.html" },
+    { "source": "/admin", "destination": "/admin.html" }
+  ]
+}

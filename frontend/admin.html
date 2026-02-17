@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Care24</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="admin">
+  <header class="topbar">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">C24</span>
+      <span class="brand-text">Care24</span>
+    </a>
+    <nav class="menu">
+      <span id="welcomeText"></span>
+      <button class="btn btn-ghost" id="logoutBtn" type="button">Logout</button>
+    </nav>
+  </header>
+
+  <main class="dash-layout">
+    <section class="panel">
+      <h2>Platform Analytics</h2>
+      <div id="analyticsCards" class="card-grid"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Service Management</h2>
+      <form id="serviceForm" class="form-grid two-col">
+        <label>Service Name
+          <input type="text" id="serviceFormName" required>
+        </label>
+        <label>Duration
+          <input type="text" id="serviceFormDuration" required>
+        </label>
+        <label>Description
+          <input type="text" id="serviceFormDescription" required>
+        </label>
+        <label>Price
+          <input type="number" id="serviceFormPrice" min="1" required>
+        </label>
+        <label>Required Qualification
+          <input type="text" id="serviceFormQualification" required>
+        </label>
+        <div></div>
+        <button type="submit" class="btn btn-primary">Add Service</button>
+      </form>
+      <div id="adminServiceList" class="list"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Caregiver Verification</h2>
+      <div id="caregiverApprovalList" class="list"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Complaints & Escalations</h2>
+      <div id="adminComplaints" class="list"></div>
+    </section>
+
+    <section class="panel">
+      <h2>All Platform Bookings</h2>
+      <div id="allBookings" class="list"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Notifications</h2>
+      <div id="notificationList" class="list"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

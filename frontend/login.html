@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Care24</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="login">
+  <main class="auth-shell">
+    <section class="auth-card">
+      <h1>Welcome Back</h1>
+      <p class="muted">Sign in to manage bookings and care updates.</p>
+      <form id="loginForm" class="form-grid">
+        <label>Email
+          <input type="email" id="loginEmail" placeholder="family@email.com" required>
+        </label>
+        <label>Password
+          <input type="password" id="loginPassword" placeholder="Enter password" required>
+        </label>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+      <p class="muted"><a href="forgot-password.html">Forgot password?</a></p>
+      <p class="muted">New to Care24? <a href="register.html">Create account</a></p>
+      <p class="muted"><a href="index.html">Back to home</a></p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

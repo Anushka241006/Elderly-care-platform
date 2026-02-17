@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard | Care24</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="dashboard">
+  <header class="topbar">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">C24</span>
+      <span class="brand-text">Care24</span>
+    </a>
+    <nav class="menu">
+      <span id="welcomeText"></span>
+      <button class="btn btn-ghost" id="logoutBtn" type="button">Logout</button>
+    </nav>
+  </header>
+
+  <main class="dash-layout">
+    <section class="panel">
+      <h2>Patient Profiles</h2>
+      <form id="patientForm" class="form-grid two-col">
+        <label>Patient Name
+          <input type="text" id="profilePatientName" required>
+        </label>
+        <label>Patient Age
+          <input type="number" id="profilePatientAge" min="1" max="120" required>
+        </label>
+        <label>Medical Needs
+          <input type="text" id="profileMedicalNeeds" placeholder="Conditions, mobility, medication support">
+        </label>
+        <div></div>
+        <button type="submit" class="btn btn-primary">Save Patient Profile</button>
+      </form>
+      <div id="patientList" class="list"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Book a Care Service</h2>
+      <form id="bookingForm" class="form-grid two-col">
+        <label>Patient Name
+          <input type="text" id="patientName" required>
+        </label>
+        <label>Patient Age
+          <input type="number" id="patientAge" min="1" max="120" required>
+        </label>
+        <label>Medical Needs
+          <input type="text" id="medicalNeeds" placeholder="Diabetes, mobility support, etc.">
+        </label>
+        <label>Service
+          <select id="serviceSelect" required></select>
+        </label>
+        <label>Caregiver
+          <select id="caregiverSelect" required></select>
+        </label>
+        <p id="caregiverHint" class="muted"></p>
+        <label>Plan
+          <select id="planType">
+            <option value="hourly">Hourly</option>
+            <option value="daily" selected>Daily</option>
+            <option value="long-term">Long-term</option>
+          </select>
+        </label>
+        <label>Schedule Date
+          <input type="date" id="scheduleDate" required>
+        </label>
+        <div></div>
+        <button type="submit" class="btn btn-primary">Submit Booking</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>My Bookings</h2>
+      <div id="myBookings" class="list"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Available Caregivers</h2>
+      <div id="caregiverDirectory" class="list"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Raise a Complaint / Dispute</h2>
+      <form id="complaintForm" class="form-grid two-col">
+        <label>Booking
+          <select id="complaintBookingId" required></select>
+        </label>
+        <label>Category
+          <select id="complaintCategory">
+            <option value="quality">Service Quality</option>
+            <option value="delay">Delay</option>
+            <option value="behavior">Behavior</option>
+            <option value="billing">Billing</option>
+            <option value="other">Other</option>
+          </select>
+        </label>
+        <label>Complaint Details
+          <input type="text" id="complaintMessage" required placeholder="Describe the issue">
+        </label>
+        <div></div>
+        <button type="submit" class="btn btn-primary">Submit Complaint</button>
+      </form>
+      <div id="myComplaints" class="list"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Notifications</h2>
+      <div id="notificationList" class="list"></div>
+    </section>
+  </main>
+
+  <div id="paymentModal" class="modal-backdrop hidden" aria-hidden="true">
+    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="paymentTitle">
+      <h3 id="paymentTitle">Complete Payment</h3>
+      <p class="muted">Choose a method to pay for this booking.</p>
+      <label>Payment Method
+        <select id="paymentMethodSelect">
+          <option value="upi">UPI</option>
+          <option value="card">Card</option>
+          <option value="netbanking">Net Banking</option>
+          <option value="cash">Cash</option>
+        </select>
+      </label>
+      <div class="actions">
+        <button class="btn btn-ghost" id="paymentCancelBtn" type="button">Cancel</button>
+        <button class="btn btn-primary" id="paymentConfirmBtn" type="button">Pay Now</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

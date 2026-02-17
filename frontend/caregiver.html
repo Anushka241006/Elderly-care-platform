@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caregiver Dashboard | Care24</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="caregiver">
+  <header class="topbar">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">C24</span>
+      <span class="brand-text">Care24</span>
+    </a>
+    <nav class="menu">
+      <span id="welcomeText"></span>
+      <button class="btn btn-ghost" id="logoutBtn" type="button">Logout</button>
+    </nav>
+  </header>
+
+  <main class="dash-layout">
+    <section class="panel">
+      <h2>Profile & Availability</h2>
+      <form id="caregiverProfileForm" class="form-grid two-col">
+        <label>Qualification
+          <input type="text" id="cgQualification" placeholder="RN, Physiotherapist, etc.">
+        </label>
+        <label>Service Area
+          <input type="text" id="cgServiceArea" placeholder="City / region">
+        </label>
+        <label>Availability
+          <select id="cgAvailability">
+            <option>Full-time</option>
+            <option>Part-time</option>
+            <option>Night Shift</option>
+            <option>Weekends</option>
+          </select>
+        </label>
+        <div></div>
+        <button type="submit" class="btn btn-primary">Update Profile</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Earnings & Work Summary</h2>
+      <div id="earningSummary" class="list"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Assigned Bookings</h2>
+      <div id="caregiverBookings" class="list"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Complaints Related To My Services</h2>
+      <div id="caregiverComplaints" class="list"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Notifications</h2>
+      <div id="notificationList" class="list"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
