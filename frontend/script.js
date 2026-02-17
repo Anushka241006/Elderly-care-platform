@@ -725,15 +725,26 @@ async function loadMyBookings() {
       : "<p class='muted'>No bookings yet.</p>";
 
     const complaintBookingSelect = document.getElementById("complaintBookingId");
+    const complaintForm = document.getElementById("complaintForm");
+    const complaintSubmitBtn = complaintForm?.querySelector('button[type="submit"]');
     if (complaintBookingSelect) {
-      complaintBookingSelect.innerHTML =
-        `<option value="" disabled selected>Select booking</option>` +
-        bookings
-          .map(
-            (item) =>
-              `<option value="${item._id}">${item.patientName} - ${item.service?.name || "Service"} (${formatDate(item.scheduleDate)})</option>`
-          )
-          .join("");
+      if (!bookings.length) {
+        complaintBookingSelect.innerHTML =
+          `<option value="" disabled selected>No bookings available</option>`;
+        complaintBookingSelect.disabled = true;
+        if (complaintSubmitBtn) complaintSubmitBtn.disabled = true;
+      } else {
+        complaintBookingSelect.disabled = false;
+        complaintBookingSelect.innerHTML =
+          `<option value="" disabled selected>Select booking</option>` +
+          bookings
+            .map(
+              (item) =>
+                `<option value="${item._id}">${item.patientName} - ${item.service?.name || "Service"} (${formatDate(item.scheduleDate)})</option>`
+            )
+            .join("");
+        if (complaintSubmitBtn) complaintSubmitBtn.disabled = false;
+      }
     }
   } catch (error) {
     container.innerHTML = `<p class="muted">${error.message}</p>`;
